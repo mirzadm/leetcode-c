@@ -13,8 +13,10 @@
 bool is_palindrome(int num)
 {
     char str[MAX_LEN];
-    int left, right, length;
+    int left, right;
 
+    if (num < 0)
+        return false;
     sprintf(str, "%d", num);
     left = 0;
     right = strlen(str) - 1;
@@ -25,12 +27,4 @@ bool is_palindrome(int num)
         right--;
     }
     return true;
-}
-
-int main()
-{
-    if (is_palindrome(121))
-        printf("Yes");
-    else
-        printf("No");
 }
